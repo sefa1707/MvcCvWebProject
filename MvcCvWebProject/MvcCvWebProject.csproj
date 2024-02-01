@@ -2453,6 +2453,12 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Vitrin\Index.cshtml" />
+    <Content Include="Views\Vitrin\Deneyim.cshtml" />
+    <Content Include="Views\Vitrin\Egitim.cshtml" />
+    <Content Include="Views\Vitrin\Yetenek.cshtml" />
+    <Content Include="Views\Vitrin\Hobi.cshtml" />
+    <Content Include="Views\Vitrin\Sertifika.cshtml" />
+    <Content Include="Views\Vitrin\iletisim.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="MvcCvDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="MvcCvDbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="TblDeneyim">
           <Key>
             <PropertyRef Name="DeneyimID" />
@@ -53,7 +53,7 @@
           <Key>
             <PropertyRef Name="iletisimID" />
           </Key>
-          <Property Name="iletisimID" Type="int" Nullable="false" />
+          <Property Name="iletisimID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="iletisimGonderen" Type="varchar" MaxLength="50" />
           <Property Name="iletisimMail" Type="varchar" MaxLength="50" />
           <Property Name="iletisimKonu" Type="varchar" MaxLength="100" />
@@ -94,8 +94,7 @@
           <EntitySet Name="TblSertifika" EntityType="Self.TblSertifika" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblYetenek" EntityType="Self.TblYetenek" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="MvcCvDbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
