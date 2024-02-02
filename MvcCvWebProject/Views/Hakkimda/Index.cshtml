@@ -1,0 +1,59 @@
+﻿@using MvcCvWebProject.Models.Entity
+@model List<TblHakkimda>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Hakkımda Listesi</h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Ad</th>
+                    <th>Soyad</th>
+                    <th>Adres</th>
+                    <th>Telefon</th>
+                    <th>Mail</th>
+                    <th>Açıklama</th>
+                    <th>Görsel</th>
+                    <th>Düzenle</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.HakkimdaID</td>
+                        <td>@item.HakkimdaAd</td>
+                        <td>@item.HakkimdaSoyad</td>
+                        <td>@item.HakkimdaAdres</td>
+                        <td>@item.HakkimdaTelefon</td>
+                        <td>@item.HakkimdaMail</td>
+                        <td>@item.HakkimdaAciklama</td>
+                        <td>@item.HakkimdaGorsel</td>
+                    </tr>
+                }
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <th>ID</th>
+                    <th>Ad</th>
+                    <th>Soyad</th>
+                    <th>Adres</th>
+                    <th>Telefon</th>
+                    <th>Mail</th>
+                    <th>Açıklama</th>
+                    <th>Görsel</th>
+                    <th>Düzenle</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>

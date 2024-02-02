@@ -1,0 +1,66 @@
+﻿@using MvcCvWebProject.Models.Entity
+@model List<TblDeneyim>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Deneyim Listesi</h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th width="10">ID</th>
+                    <th width="50">Ünvan</th>
+                    <th>Kuruluş</th>
+                    <th>Açıklama</th>
+                    <th width="50">Başlangıç Tarihi</th>
+                    <th width="50">Bitiş Tarihi</th>
+                    <th>Düzenle</th>
+                    <th>Aktif</th>
+                    <th>Pasif</th>
+                    <th>Sil</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.DeneyimID</td>
+                        <td>@item.DeneyimUnvan</td>
+                        <td>@item.DeneyimKurulus</td>
+                        <td>@item.DeneyimAciklama</td>
+                        <td>@item.DeneyimBaslangicTarih</td>
+                        <td>@item.DeneyimBitisTarih</td>
+                        <td><a href="/Deneyim/DeneyimGetir/@item.DeneyimID" class="btn btn-info">Düzenle</a></td>
+                        <td><a href="#" class="btn btn-info">Aktif</a></td>
+                        <td><a href="#" class="btn btn-info">Pasif</a></td>
+                        <td><a href="/Deneyim/DeneyimSil/@item.DeneyimID" class="btn btn-danger">Sil</a></td>
+                    </tr>
+                }
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <th>ID</th>
+                    <th>Ünvan</th>
+                    <th>Kuruluş</th>
+                    <th>Açıklama</th>
+                    <th>Başlangıç Tarihi</th>
+                    <th>Bitiş Tarihi</th>
+                    <th>Düzenle</th>
+                    <th>Aktif</th>
+                    <th>Pasif</th>
+                    <th>Sil</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+    <!-- /.card-body -->
+</div>
+<br />
+<a href="Deneyim/DeneyimEkle/" class="btn btn-success">Yeni Deneyim Ekle</a>
+

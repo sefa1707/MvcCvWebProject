@@ -1,0 +1,70 @@
+﻿
+@{
+    ViewBag.Title = "DeneyimEkle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<div class="col-md-12">
+    <!-- general form elements disabled -->
+    <div class="card card-warning">
+        <div class="card-header">
+            <h3 class="card-title">Deneyim Ekleme Paneli</h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+            <form method="post">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <!-- text input -->
+                        <div class="form-group">
+                            <label>Deneyim Ünvanı</label>
+                            <input type="text" class="form-control" placeholder="Ünvanınızı yazınız..." name="DeneyimUnvan">
+                        </div>
+                        <div class="form-group">
+                            <label>Kuruluş Adı</label>
+                            <input type="text" class="form-control" placeholder="Çalıştığınız kurum adı..." name="DeneyimKurulus">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Başlangıç Tarihi</label>
+
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                                </div>
+                                <input type="text" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask name="DeneyimBaslangicTarih">
+                            </div>
+                            <!-- /.input group -->
+                        </div>
+
+                        <div class="form-group">
+                            <label>Bitiş Tarihi</label>
+
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                                </div>
+                                <input type="text" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask name="DeneyimBitisTarih">
+                            </div>
+                            <!-- /.input group -->
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <!-- textarea -->
+                        <div class="form-group">
+                            <label>Açıklama</label>
+                            <textarea class="form-control" rows="3" placeholder="Deneyim Açıklmasınız yazınız..." name="DeneyimAciklama"></textarea>
+                        </div>
+                    </div>
+                    
+                </div>
+                <br />
+                <button class="btn btn-warning">Kaydet</button>
+            </form>
+        </div>
+        <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+
+</div>

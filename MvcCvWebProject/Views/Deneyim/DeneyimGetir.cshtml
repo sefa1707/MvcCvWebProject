@@ -1,0 +1,74 @@
+﻿@model MvcCvWebProject.Models.Entity.TblDeneyim
+@{
+    ViewBag.Title = "DeneyimGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<div class="col-md-12">
+    <!-- general form elements disabled -->
+    <div class="card card-warning">
+        <div class="card-header">
+            <h3 class="card-title">Deneyim Ekleme Paneli</h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+            <form method="post">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <!-- text input -->
+                        <div class="form-group">
+                            <label>Deneyim Ünvanı</label>
+                            @Html.TextBoxFor(x=>x.DeneyimID, new {@class="form-control", @readonly = true })
+                        </div>
+                        <div class="form-group">
+                            <label>Deneyim Ünvanı</label>
+                            @Html.TextBoxFor(x => x.DeneyimUnvan, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label>Kuruluş Adı</label>
+                            @Html.TextBoxFor(x => x.DeneyimKurulus, new { @class = "form-control" })
+                        </div>
+
+                        <div class="form-group">
+                            <label>Başlangıç Tarihi</label>
+
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                                </div>
+                                @Html.TextBoxFor(x => x.DeneyimBaslangicTarih, new { @class = "form-control" })
+                            </div>
+                            <!-- /.input group -->
+                        </div>
+
+                        <div class="form-group">
+                            <label>Bitiş Tarihi</label>
+
+                            <div class="input-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                                </div>
+                                @Html.TextBoxFor(x => x.DeneyimBitisTarih, new { @class = "form-control" })
+                            </div>
+                            <!-- /.input group -->
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <!-- textarea -->
+                        <div class="form-group">
+                            <label>Açıklama</label>
+                            @Html.TextAreaFor(x=>x.DeneyimAciklama, new {@class="form-control"})
+                        </div>
+                    </div>
+
+                </div>
+                <br />
+                <button class="btn btn-warning">Güncelle</button>
+            </form>
+        </div>
+        <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+
+</div>
