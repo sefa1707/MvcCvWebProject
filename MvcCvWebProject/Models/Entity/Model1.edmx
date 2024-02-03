@@ -83,6 +83,7 @@
           </Key>
           <Property Name="YetenekID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="YetenekAciklama" Type="varchar" MaxLength="100" />
+          <Property Name="YetenekOran" Type="int" />
         </EntityType>
         <EntityContainer Name="MvcCvDbModelStoreContainer">
           <EntitySet Name="TblDeneyim" EntityType="Self.TblDeneyim" Schema="dbo" store:Type="Tables" />
@@ -176,6 +177,7 @@
           </Key>
           <Property Name="YetenekID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="YetenekAciklama" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="YetenekOran" Type="Int32" />
         </EntityType>
         <EntityContainer Name="MvcCvDbEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="TblDeneyim" EntityType="Self.TblDeneyim" />
@@ -275,6 +277,7 @@
           <EntitySetMapping Name="TblYetenek">
             <EntityTypeMapping TypeName="MvcCvDbModel.TblYetenek">
               <MappingFragment StoreEntitySet="TblYetenek">
+                <ScalarProperty Name="YetenekOran" ColumnName="YetenekOran" />
                 <ScalarProperty Name="YetenekID" ColumnName="YetenekID" />
                 <ScalarProperty Name="YetenekAciklama" ColumnName="YetenekAciklama" />
               </MappingFragment>

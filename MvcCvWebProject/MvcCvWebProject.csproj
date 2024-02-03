@@ -133,6 +133,7 @@
     <Compile Include="Controllers\HakkimdaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\VitrinController.cs" />
+    <Compile Include="Controllers\YetenekController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -2474,6 +2475,9 @@
     <Content Include="Views\Deneyim\Index.cshtml" />
     <Content Include="Views\Deneyim\DeneyimEkle.cshtml" />
     <Content Include="Views\Deneyim\DeneyimGetir.cshtml" />
+    <Content Include="Views\Yetenek\Index.cshtml" />
+    <Content Include="Views\Yetenek\YetenekEkle.cshtml" />
+    <Content Include="Views\Yetenek\YetenekGetir.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

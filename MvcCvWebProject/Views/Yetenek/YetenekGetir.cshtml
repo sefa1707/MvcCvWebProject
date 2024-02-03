@@ -1,0 +1,41 @@
+﻿@model MvcCvWebProject.Models.Entity.TblYetenek
+@{
+    ViewBag.Title = "YetenekGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<div class="col-md-12">
+    <!-- general form elements disabled -->
+    <div class="card card-warning">
+        <div class="card-header">
+            <h3 class="card-title">Yetenek Düzenleme Paneli</h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+            <form method="post">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <!-- text input -->
+                        <div class="form-group">
+                            <label>Yetenek ID</label>
+                            @Html.TextBoxFor(x => x.YetenekID, new { @class = "form-control", @readonly = true })
+                        </div>
+                        <div class="form-group">
+                            <label>Yetenek Açıklaması</label>
+                            @Html.TextBoxFor(x => x.YetenekAciklama, new { @class = "form-control"})
+                        </div>
+                        <div class="form-group">
+                            <label>Yetenek Oranı</label>
+                            @Html.TextBoxFor(x => x.YetenekOran, new { @class = "form-control" })
+                        </div>
+
+                    </div>
+                </div>
+                <br />
+                <button class="btn btn-warning">Güncelle</button>
+            </form>
+        </div>
+        <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+
+</div>

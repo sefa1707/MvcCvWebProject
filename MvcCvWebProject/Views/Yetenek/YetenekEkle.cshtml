@@ -1,0 +1,36 @@
+﻿
+@{
+    ViewBag.Title = "YetenekEkle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<div class="col-md-12">
+    <!-- general form elements disabled -->
+    <div class="card card-warning">
+        <div class="card-header">
+            <h3 class="card-title">Yetenek Ekleme Paneli</h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+            <form method="post">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <!-- text input -->
+                        <div class="form-group">
+                            <label>Yetenek Açıklaması</label>
+                            <input type="text" class="form-control" placeholder="Yeteneğinizi yazınız..." name="YetenekAciklama">
+                        </div>
+                        <div class="form-group">
+                            <label>Yetenek Oran</label>
+                            <input type="text" class="form-control" placeholder="Yetenek oranınızı yazınız..." name="YetenekOran">
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <button class="btn btn-warning">Kaydet</button>
+            </form>
+        </div>
+        <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+
+</div>

@@ -16,5 +16,6 @@ namespace MvcCvWebProject.Models.Entity
     {
         public int YetenekID { get; set; }
         public string YetenekAciklama { get; set; }
+        public Nullable<int> YetenekOran { get; set; }
     }
 }
