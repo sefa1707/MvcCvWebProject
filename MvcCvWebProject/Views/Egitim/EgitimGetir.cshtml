@@ -1,0 +1,52 @@
+﻿@model MvcCvWebProject.Models.Entity.TblEgitim
+@{
+    ViewBag.Title = "EgitimGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<div class="col-md-12">
+    <!-- general form elements disabled -->
+    <div class="card card-warning">
+        <div class="card-header">
+            <h3 class="card-title">Deneyim Ekleme Paneli</h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+            <form method="post">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <!-- text input -->
+                        <div class="form-group">
+                            <label>ID</label>
+                            @Html.TextBoxFor(x => x.EgitimID, new { @class = "form-control", @readonly = true })
+                        </div>
+                        <div class="form-group">
+                            <label>Okul Adı</label>
+                            @Html.TextBoxFor(x => x.EgitimOkulAd, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label>Bölüm Adı</label>
+                            @Html.TextBoxFor(x => x.EgitimBolumAd, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label>Açıklama</label>
+                            @Html.TextBoxFor(x => x.EgitimAciklama, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label>Başlangıç Tarihi</label>
+                            @Html.TextBoxFor(x => x.EgitimBaslangicTarih, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label>Bitiş Tarihi</label>
+                            @Html.TextBoxFor(x => x.EgitimBitisTarih, new { @class = "form-control" })
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <button class="btn btn-warning">Güncelle</button>
+            </form>
+        </div>
+        <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+
+</div>

@@ -1,0 +1,69 @@
+﻿@using MvcCvWebProject.Models.Entity
+@model List<TblEgitim>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Eğitim Listesi</h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th width="10">ID</th>
+                    <th>Okul Adı</th>
+                    <th>Bölüm Adı</th>
+                    <th>Açıklama</th>
+                    <th>GNO</th>
+                    <th>Başlangıç Tarihi</th>
+                    <th>Bitiş Tarihi</th>
+                    <th>Düzenle</th>
+                    <th>Aktif</th>
+                    <th>Pasif</th>
+                    <th>Sil</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.EgitimID</td>
+                        <td>@item.EgitimOkulAd</td>
+                        <td>@item.EgitimBolumAd</td>
+                        <td>@item.EgitimAciklama</td>
+                        <td>@item.EgitimGNO</td>
+                        <td>@item.EgitimBaslangicTarih</td>
+                        <td>@item.EgitimBitisTarih</td>
+                        <td><a href="/Egitim/EgitimGetir/@item.EgitimID" class="btn btn-info">Düzenle</a></td>
+                        <td><a href="#" class="btn btn-info">Aktif</a></td>
+                        <td><a href="#" class="btn btn-info">Pasif</a></td>
+                        <td><a href="/Egitim/EgitimSil/@item.EgitimID" class="btn btn-danger">Sil</a></td>
+                    </tr>
+                }
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <th width="10">ID</th>
+                    <th>Okul Adı</th>
+                    <th>Bölüm Adı</th>
+                    <th>Açıklama</th>
+                    <th>GNO</th>
+                    <th>Başlangıç Tarihi</th>
+                    <th>Bitiş Tarihi</th>
+                    <th>Düzenle</th>
+                    <th>Aktif</th>
+                    <th>Pasif</th>
+                    <th>Sil</th>
+                </tr>
+            </tfoot>
+        </table>
+        <br />
+        <a href="Egitim/EgitimEkle/" class="btn btn-success">Yeni Eğitim Ekle</a>
+    </div>
+
+</div>
+<br />
