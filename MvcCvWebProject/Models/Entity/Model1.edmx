@@ -15,6 +15,7 @@
           <Property Name="DeneyimAciklama" Type="varchar" MaxLength="500" />
           <Property Name="DeneyimBaslangicTarih" Type="varchar" MaxLength="50" />
           <Property Name="DeneyimBitisTarih" Type="varchar" MaxLength="50" />
+          <Property Name="DeneyimDurum" Type="bit" />
         </EntityType>
         <EntityType Name="TblEgitim">
           <Key>
@@ -77,6 +78,16 @@
           <Property Name="SertifikaKurulus" Type="varchar" MaxLength="100" />
           <Property Name="SertifikaTarih" Type="varchar" MaxLength="50" />
         </EntityType>
+        <EntityType Name="TblSosyalMedya">
+          <Key>
+            <PropertyRef Name="SosyalID" />
+          </Key>
+          <Property Name="SosyalID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SosyalAd" Type="varchar" MaxLength="50" />
+          <Property Name="SosyalLink" Type="varchar" MaxLength="250" />
+          <Property Name="SosyalDurum" Type="bit" />
+          <Property Name="Sosyalicon" Type="varchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="TblYetenek">
           <Key>
             <PropertyRef Name="YetenekID" />
@@ -93,6 +104,7 @@
           <EntitySet Name="Tbliletisim" EntityType="Self.Tbliletisim" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblKullanici" EntityType="Self.TblKullanici" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblSertifika" EntityType="Self.TblSertifika" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TblSosyalMedya" EntityType="Self.TblSosyalMedya" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TblYetenek" EntityType="Self.TblYetenek" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -109,6 +121,7 @@
           <Property Name="DeneyimAciklama" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
           <Property Name="DeneyimBaslangicTarih" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="DeneyimBitisTarih" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DeneyimDurum" Type="Boolean" />
         </EntityType>
         <EntityType Name="TblEgitim">
           <Key>
@@ -188,7 +201,18 @@
           <EntitySet Name="TblKullanici" EntityType="Self.TblKullanici" />
           <EntitySet Name="TblSertifika" EntityType="Self.TblSertifika" />
           <EntitySet Name="TblYetenek" EntityType="Self.TblYetenek" />
+          <EntitySet Name="TblSosyalMedya" EntityType="MvcCvDbModel.TblSosyalMedya" />
         </EntityContainer>
+        <EntityType Name="TblSosyalMedya">
+          <Key>
+            <PropertyRef Name="SosyalID" />
+          </Key>
+          <Property Name="SosyalID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SosyalAd" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SosyalLink" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="SosyalDurum" Type="Boolean" />
+          <Property Name="Sosyalicon" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -198,6 +222,7 @@
           <EntitySetMapping Name="TblDeneyim">
             <EntityTypeMapping TypeName="MvcCvDbModel.TblDeneyim">
               <MappingFragment StoreEntitySet="TblDeneyim">
+                <ScalarProperty Name="DeneyimDurum" ColumnName="DeneyimDurum" />
                 <ScalarProperty Name="DeneyimID" ColumnName="DeneyimID" />
                 <ScalarProperty Name="DeneyimUnvan" ColumnName="DeneyimUnvan" />
                 <ScalarProperty Name="DeneyimKurulus" ColumnName="DeneyimKurulus" />
@@ -280,6 +305,17 @@
                 <ScalarProperty Name="YetenekOran" ColumnName="YetenekOran" />
                 <ScalarProperty Name="YetenekID" ColumnName="YetenekID" />
                 <ScalarProperty Name="YetenekAciklama" ColumnName="YetenekAciklama" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblSosyalMedya">
+            <EntityTypeMapping TypeName="MvcCvDbModel.TblSosyalMedya">
+              <MappingFragment StoreEntitySet="TblSosyalMedya">
+                <ScalarProperty Name="Sosyalicon" ColumnName="Sosyalicon" />
+                <ScalarProperty Name="SosyalDurum" ColumnName="SosyalDurum" />
+                <ScalarProperty Name="SosyalLink" ColumnName="SosyalLink" />
+                <ScalarProperty Name="SosyalAd" ColumnName="SosyalAd" />
+                <ScalarProperty Name="SosyalID" ColumnName="SosyalID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

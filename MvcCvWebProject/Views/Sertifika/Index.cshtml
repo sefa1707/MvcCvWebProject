@@ -1,0 +1,60 @@
+﻿@using MvcCvWebProject.Models.Entity
+@model List<TblSertifika>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">Sertifika Listesi</h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th width="10">ID</th>
+                    <th>Sertifika Adı</th>
+                    <th>Kuruluş</th>
+                    <th>Tarih</th>
+                    <th>Düzenle</th>
+                    <th>Aktif</th>
+                    <th>Pasif</th>
+                    <th>Sil</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.SertifikaID</td>
+                        <td>@item.SertifikaAd</td>
+                        <td>@item.SertifikaKurulus</td>
+                        <td>@item.SertifikaTarih</td>
+                        <td><a href="/Sertifika/SertifikaGetir/@item.SertifikaID" class="btn btn-info">Düzenle</a></td>
+                        <td><a href="#" class="btn btn-info">Aktif</a></td>
+                        <td><a href="#" class="btn btn-info">Pasif</a></td>
+                        <td><a href="/Sertifika/SertifikaSil/@item.SertifikaID" class="btn btn-danger">Sil</a></td>
+                    </tr>
+                }
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <th width="10">ID</th>
+                    <th>Sertifika Adı</th>
+                    <th>Kuruluş</th>
+                    <th>Tarih</th>
+                    <th>Düzenle</th>
+                    <th>Aktif</th>
+                    <th>Pasif</th>
+                    <th>Sil</th>
+                </tr>
+            </tfoot>
+        </table>
+        <br />
+        <a href="/Sertifika/SertifikaEkle/" class="btn btn-success">Yeni Sertifika Ekle</a>
+    </div>
+
+</div>
+<br />

@@ -12,14 +12,12 @@ namespace MvcCvWebProject.Models.Entity
     using System;
     using System.Collections.Generic;
     
-    public partial class TblDeneyim
+    public partial class TblSosyalMedya
     {
-        public int DeneyimID { get; set; }
-        public string DeneyimUnvan { get; set; }
-        public string DeneyimKurulus { get; set; }
-        public string DeneyimAciklama { get; set; }
-        public string DeneyimBaslangicTarih { get; set; }
-        public string DeneyimBitisTarih { get; set; }
-        public Nullable<bool> DeneyimDurum { get; set; }
+        public int SosyalID { get; set; }
+        public string SosyalAd { get; set; }
+        public string SosyalLink { get; set; }
+        public Nullable<bool> SosyalDurum { get; set; }
+        public string Sosyalicon { get; set; }
     }
 }

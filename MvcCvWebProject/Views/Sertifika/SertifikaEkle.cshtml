@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "SertifikaEkle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<div class="col-md-12">
+    <!-- general form elements disabled -->
+    <div class="card card-warning">
+        <div class="card-header">
+            <h3 class="card-title">Sertifika Ekleme Paneli</h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+            <form method="post">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <!-- text input -->
+                        <div class="form-group">
+                            <label>Sertifika Adı</label>
+                            <input type="text" class="form-control" placeholder="Sertifika Adınız yazınız..." name="SertifikaAd">
+                        </div>
+                        <div class="form-group">
+                            <label>Kuruluş Adı</label>
+                            <input type="text" class="form-control" placeholder="Sertifikayı aldığınız kurum adı..." name="SertifikaKurulus">
+                        </div>
+                        <div class="form-group">
+                            <label>Tarih</label>
+                            <input type="text" class="form-control" placeholder="Tarih..." name="SertifikaTarih">
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <button class="btn btn-warning">Kaydet</button>
+            </form>
+        </div>
+        <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+
+</div>

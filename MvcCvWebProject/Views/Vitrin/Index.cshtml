@@ -6,6 +6,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+      
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
@@ -54,9 +56,10 @@
         <section class="resume-section" id="about">
 
 
-            @foreach (var item in Model)
-            {
-                <div class="resume-section-content">
+
+            <div class="resume-section-content">
+                @foreach (var item in Model)
+                {
                     <h1 class="mb-0">
                         @item.HakkimdaAd
                         <span class="text-primary">@item.HakkimdaSoyad</span>
@@ -66,14 +69,10 @@
                         <a href="mailto:@item.HakkimdaMail">@item.HakkimdaMail</a>
                     </div>
                     <p class="lead mb-5">@item.HakkimdaAciklama</p>
-                    <div class="social-icons">
-                        <a class="social-icon" href="#"><i class="fab fa-linkedin-in"></i></a>
-                        <a class="social-icon" href="#"><i class="fab fa-github"></i></a>
-                        <a class="social-icon" href="#"><i class="fab fa-twitter"></i></a>
-                        <a class="social-icon" href="#"><i class="fab fa-facebook-f"></i></a>
-                    </div>
-                </div>
-            }
+                }
+                @Html.Action("SosyalMedya")
+            </div>
+
         </section>
         <hr class="m-0" />
         <!-- Experience-->
@@ -100,5 +99,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
     <!-- Core theme JS-->
     <script src="~/VitrinTema/js/scripts.js"></script>
+
 </body>
 </html>

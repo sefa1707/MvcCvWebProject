@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Web;
 using System.Web.Mvc;
 using MvcCvWebProject.Models.Entity;
 
 namespace MvcCvWebProject.Controllers
 {
+    [AllowAnonymous]
     public class VitrinController : Controller
     {
         // GET: Vitrin
@@ -57,6 +59,12 @@ namespace MvcCvWebProject.Controllers
             db.Tbliletisim.Add(i);
             db.SaveChanges();
             return PartialView();
+        }
+
+        public PartialViewResult SosyalMedya()
+        {
+            var sosyal= db.TblSosyalMedya.Where(x => x.SosyalDurum == true).ToList();
+            return PartialView(sosyal);
         }
     }
 }

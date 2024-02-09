@@ -1,0 +1,46 @@
+﻿
+@model MvcCvWebProject.Models.Entity.TblSertifika
+@{
+    ViewBag.Title = "SertifikaGetir";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+<div class="col-md-12">
+    <!-- general form elements disabled -->
+    <div class="card card-warning">
+        <div class="card-header">
+            <h3 class="card-title">Deneyim Ekleme Paneli</h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+            <form method="post">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <!-- text input -->
+                        <div class="form-group">
+                            <label>ID</label>
+                            @Html.TextBoxFor(x => x.SertifikaID, new { @class = "form-control", @readonly = true })
+                        </div>
+                        <div class="form-group">
+                            <label>Sertifika Adı</label>
+                            @Html.TextBoxFor(x => x.SertifikaAd, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label>Kuruluş Adı</label>
+                            @Html.TextBoxFor(x => x.SertifikaKurulus, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label>Tarih</label>
+                            @Html.TextBoxFor(x => x.SertifikaTarih, new { @class = "form-control" })
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <button class="btn btn-warning">Güncelle</button>
+            </form>
+        </div>
+        <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+
+</div>

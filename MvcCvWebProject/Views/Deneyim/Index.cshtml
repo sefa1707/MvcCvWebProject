@@ -17,6 +17,7 @@
                     <th width="50">Ünvan</th>
                     <th>Kuruluş</th>
                     <th>Açıklama</th>
+                    <th>Durum</th>
                     <th width="50">Başlangıç Tarihi</th>
                     <th width="50">Bitiş Tarihi</th>
                     <th>Düzenle</th>
@@ -33,12 +34,13 @@
                         <td>@item.DeneyimUnvan</td>
                         <td>@item.DeneyimKurulus</td>
                         <td>@item.DeneyimAciklama</td>
+                        <td>@item.DeneyimDurum</td>
                         <td>@item.DeneyimBaslangicTarih</td>
                         <td>@item.DeneyimBitisTarih</td>
-                        <td><a href="/Deneyim/DeneyimGetir/@item.DeneyimID" class="btn btn-info">Düzenle</a></td>
-                        <td><a href="#" class="btn btn-info">Aktif</a></td>
-                        <td><a href="#" class="btn btn-info">Pasif</a></td>
-                        <td><a href="/Deneyim/DeneyimSil/@item.DeneyimID" class="btn btn-danger">Sil</a></td>
+                        <td><a class="btn btn-primary btn-sm" href="/Deneyim/DeneyimGetir/@item.DeneyimID"><i class="fas fa-pencil-alt"></i>&nbsp;&nbsp;Düzenle</a></td>
+                        <td><a class="btn btn-success btn-sm" href="/Deneyim/DeneyimAktifYap/@item.DeneyimID"><i class="fas fa-pencil-alt"></i>&nbsp;&nbsp;Aktif</a></td>
+                        <td><a class="btn btn-warning btn-sm" href="/Deneyim/DeneyimPasifYap/@item.DeneyimID"><i class="fas fa-pencil-alt"></i>&nbsp;&nbsp;Pasif</a></td>
+                        <td><a class="btn btn-danger btn-sm" href="/Deneyim/DeneyimSil/@item.DeneyimID"><i class="fas fa-trash"></i>&nbsp;&nbsp;Sil</a></td>
                     </tr>
                 }
             </tbody>
@@ -49,6 +51,7 @@
                     <th>Ünvan</th>
                     <th>Kuruluş</th>
                     <th>Açıklama</th>
+                    <th>Durum</th>
                     <th>Başlangıç Tarihi</th>
                     <th>Bitiş Tarihi</th>
                     <th>Düzenle</th>
@@ -59,7 +62,7 @@
             </tfoot>
         </table>
         <br />
-        <a href="Deneyim/DeneyimEkle/" class="btn btn-success">Yeni Deneyim Ekle</a>
+        <a href="/Deneyim/DeneyimEkle/" class="btn btn-success">Yeni Deneyim Ekle</a>
     </div>
 
 </div>

@@ -4,56 +4,84 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
-<div class="card">
-    <div class="card-header">
-        <h3 class="card-title">Hakkımda Listesi</h3>
-    </div>
-    <!-- /.card-header -->
-    <div class="card-body">
-        <table id="example1" class="table table-bordered table-striped">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>Ad</th>
-                    <th>Soyad</th>
-                    <th>Adres</th>
-                    <th>Telefon</th>
-                    <th>Mail</th>
-                    <th>Açıklama</th>
-                    <th>Görsel</th>
-                    <th>Düzenle</th>
-                </tr>
-            </thead>
-            <tbody>
+
+
+<!-- /.card-header -->
+<div class="col-md-12">
+    <!-- general form elements disabled -->
+    <div class="card card-warning">
+        <div class="card-header">
+            <h3 class="card-title">Hakkımda Düzenleme Paneli</h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+
+            <form method="post">
                 @foreach (var item in Model)
                 {
-                    <tr>
-                        <td>@item.HakkimdaID</td>
-                        <td>@item.HakkimdaAd</td>
-                        <td>@item.HakkimdaSoyad</td>
-                        <td>@item.HakkimdaAdres</td>
-                        <td>@item.HakkimdaTelefon</td>
-                        <td>@item.HakkimdaMail</td>
-                        <td>@item.HakkimdaAciklama</td>
-                        <td>@item.HakkimdaGorsel</td>
-                    </tr>
-                }
-            </tbody>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <!-- text input -->
+                            <div class="form-group">
+                                <label>Ad</label>
+                                <input type="text" class="form-control" name="HakkimdaAd" value="@item.HakkimdaAd">
 
-            <tfoot>
-                <tr>
-                    <th>ID</th>
-                    <th>Ad</th>
-                    <th>Soyad</th>
-                    <th>Adres</th>
-                    <th>Telefon</th>
-                    <th>Mail</th>
-                    <th>Açıklama</th>
-                    <th>Görsel</th>
-                    <th>Düzenle</th>
-                </tr>
-            </tfoot>
-        </table>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <!-- text input -->
+                            <div class="form-group">
+                                <label>Soyad</label>
+                                <input type="text" class="form-control" name="HakkimdaSoyad" value="@item.HakkimdaSoyad">
+
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <!-- text input -->
+                            <div class="form-group">
+                                <label>Telefon</label>
+                                <input type="text" class="form-control" name="HakkimdaTelefon" value="@item.HakkimdaTelefon">
+
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <!-- text input -->
+                            <div class="form-group">
+                                <label>Mail</label>
+                                <input type="text" class="form-control" name="HakkimdaMail" value="@item.HakkimdaMail">
+
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label>Açıklama</label>
+                                <textarea class="form-control" rows="2" name="HakkimdaAciklama">@item.HakkimdaAciklama</textarea>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label>Adres</label>
+                                <textarea class="form-control" rows="2" name="HakkimdaAdres">@item.HakkimdaAdres</textarea>
+                            </div>
+                        </div>
+                        <div class="col-sm-12">
+                            <!-- text input -->
+                            <div class="form-group">
+                                <label>Fotoğraf</label><br />
+                                <img src="@item.HakkimdaGorsel" alt="Alternate Text"  width="100"/>
+                                <br /><br />
+                                <input type="text" class="form-control" name="HakkimdaGorsel" value="@item.HakkimdaGorsel">
+
+                            </div>
+                        </div>
+
+                    </div>
+                }
+                <button class="btn btn-success">Güncelle</button>
+            </form>
+        </div>
+        <!-- /.card-body -->
     </div>
-    <!-- /.card-body -->
+
 </div>
+<!-- /.card-body -->

@@ -17,6 +17,17 @@ namespace MvcCvWebProject.Controllers
             var egitim = repo.List();
             return View(egitim);
         }
+        [HttpGet]
+        public ActionResult EgitimEkle()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult EgitimEkle(TblEgitim e)
+        {
+            repo.TAdd(e);
+            return RedirectToAction("Index");
+        }
 
         public ActionResult EgitimSil(int id)
         {

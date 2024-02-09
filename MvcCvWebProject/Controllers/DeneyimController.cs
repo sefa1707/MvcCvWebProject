@@ -37,7 +37,22 @@ namespace MvcCvWebProject.Controllers
             return RedirectToAction("Index");
 
         }
-       
+        public ActionResult DeneyimAktifYap(int id)
+        {
+            var deneyim = repo.Find(x => x.DeneyimID == id);
+            deneyim.DeneyimDurum = true;
+            repo.TUpdate(deneyim);
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult DeneyimPasifYap(int id)
+        {
+            var deneyim = repo.Find(x => x.DeneyimID == id);
+            deneyim.DeneyimDurum = false;
+            repo.TUpdate(deneyim);
+            return RedirectToAction("Index");
+        }
+
         public ActionResult DeneyimGetir(int id)
         {
             TblDeneyim t = repo.Find(x => x.DeneyimID == id);

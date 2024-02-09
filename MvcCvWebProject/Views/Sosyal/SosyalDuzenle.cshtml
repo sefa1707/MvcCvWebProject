@@ -1,0 +1,48 @@
+﻿@model MvcCvWebProject.Models.Entity.TblSosyalMedya
+@{
+    ViewBag.Title = "SosyalDuzenle";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+<div class="col-md-12">
+    <!-- general form elements disabled -->
+    <div class="card card-warning">
+        <div class="card-header">
+            <h3 class="card-title">Sosyal Medya Düzenleme Paneli</h3>
+        </div>
+        <!-- /.card-header -->
+        <div class="card-body">
+            <form method="post">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <!-- text input -->
+                        <div class="form-group">
+                            <label>ID</label>
+                            @Html.TextBoxFor(x => x.SosyalID, new { @class = "form-control", @readonly = true })
+                        </div>
+                        <div class="form-group">
+                            <label>Sosyal Medya Hesabı</label>
+                            @Html.TextBoxFor(x => x.SosyalAd, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label>Sosyal Medya Linki</label>
+                            @Html.TextBoxFor(x => x.SosyalLink, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label>Sosyal Medya Durum</label>
+                            @Html.TextBoxFor(x => x.SosyalDurum, new { @class = "form-control" })
+                        </div>
+                        <div class="form-group">
+                            <label>Sosyal Medya İcon</label>
+                            @Html.TextBoxFor(x => x.Sosyalicon, new { @class = "form-control" })
+                        </div>
+                    </div>
+                </div>
+                <br />
+                <button class="btn btn-warning">Güncelle</button>
+            </form>
+        </div>
+        <!-- /.card-body -->
+    </div>
+    <!-- /.card -->
+
+</div>

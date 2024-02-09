@@ -1,13 +1,13 @@
-﻿@model MvcCvWebProject.Models.Entity.TblEgitim
+﻿
 @{
-    ViewBag.Title = "EgitimGetir";
+    ViewBag.Title = "EgitimEkle";
     Layout = "~/Views/Shared/AdminLayout.cshtml";
 }
 <div class="col-md-12">
     <!-- general form elements disabled -->
     <div class="card card-warning">
         <div class="card-header">
-            <h3 class="card-title">Deneyim Ekleme Paneli</h3>
+            <h3 class="card-title">Eğitim Ekleme Paneli</h3>
         </div>
         <!-- /.card-header -->
         <div class="card-body">
@@ -16,37 +16,33 @@
                     <div class="col-sm-12">
                         <!-- text input -->
                         <div class="form-group">
-                            <label>ID</label>
-                            @Html.TextBoxFor(x => x.EgitimID, new { @class = "form-control", @readonly = true })
-                        </div>
-                        <div class="form-group">
                             <label>Okul Adı</label>
-                            @Html.TextBoxFor(x => x.EgitimOkulAd, new { @class = "form-control" })
+                            <input type="text" class="form-control" placeholder="Okul Adı..." name="EgitimOkulAd">
                         </div>
                         <div class="form-group">
                             <label>Bölüm Adı</label>
-                            @Html.TextBoxFor(x => x.EgitimBolumAd, new { @class = "form-control" })
+                            <input type="text" class="form-control" placeholder="Bölüm Adı..." name="EgitimBolumAd">
                         </div>
                         <div class="form-group">
                             <label>Açıklama</label>
-                            @Html.TextBoxFor(x => x.EgitimAciklama, new { @class = "form-control" })
+                            <input type="text" class="form-control" placeholder="Açıklama..." name="EgitimAciklama">
                         </div>
                         <div class="form-group">
                             <label>GNO</label>
-                            @Html.TextBoxFor(x => x.EgitimGNO, new { @class = "form-control" })
+                            <input type="text" class="form-control" placeholder="GNO..." name="EgitimGNO">
                         </div>
-                           <div class="form-group">
-       <label>Başlangıç Tarihi</label>
-       @Html.TextBoxFor(x => x.EgitimBaslangicTarih, new { @class = "form-control" })
-   </div>
+                        <div class="form-group">
+                            <label>Başlangıç Tarihi</label>
+                            <input type="text" class="form-control" placeholder="Tarih..." name="EgitimBaslangicTarih">
+                        </div>
                         <div class="form-group">
                             <label>Bitiş Tarihi</label>
-                            @Html.TextBoxFor(x => x.EgitimBitisTarih, new { @class = "form-control" })
+                            <input type="text" class="form-control" placeholder="Tarih..." name="EgitimBitisTarih">
                         </div>
                     </div>
                 </div>
                 <br />
-                <button class="btn btn-warning">Güncelle</button>
+                <button class="btn btn-warning">Kaydet</button>
             </form>
         </div>
         <!-- /.card-body -->

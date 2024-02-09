@@ -1,0 +1,60 @@
+﻿@using MvcCvWebProject.Models.Entity
+@model List<Tbliletisim>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+
+<div class="card">
+    <div class="card-header">
+        <h3 class="card-title">İletişim Listesi</h3>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+        <table id="example1" class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th width="10">ID</th>
+                    <th width="120">Gonderen</th>
+                    <th width="120">Mail</th>
+                    <th width="200">Konu</th>
+                    <th>Mesaj</th>
+                    <th width="120">Tarih</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.iletisimID</td>
+                        <td>@item.iletisimGonderen</td>
+                        <td>@item.iletisimMail</td>
+                        <td>@item.iletisimKonu</td>
+                        <td>@item.iletisimMesaj</td>
+                        <td>@(((DateTime)item.iletisimTarih).ToString("dd-MMM-yyyy"))</td>
+
+
+                    </tr>
+                }
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <th width="10">ID</th>
+                    <th width="50">Gonderen</th>
+                    <th>Mail</th>
+                    <th>Konu</th>
+                    <th>Mesaj</th>
+                    <th width="50">Tarih</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+
+</div>
+<br />
+
+
+
+
